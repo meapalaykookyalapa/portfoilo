@@ -26,7 +26,7 @@ body {
 }
 
 :root {
-    --bg-color: #EFEFEF;
+    --bg-color: #E8E8E8;
 }
 
 :root {
@@ -38,7 +38,7 @@ body {
 }
 
   :root {
-    --primhover-color: #FECED7;
+    --primhover-color: rgba(255, 160, 184, 0.4);
 }
 
 /*Header*/
@@ -52,7 +52,6 @@ header {
     align-self: stretch;
     height: 60px;
     width: 100%;
-    background-color: var(--bg-color);
     position: fixed;
     top: 0;
 }
@@ -97,6 +96,7 @@ header {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
+    background-color: #ffffff00;
 }
 
 .round-button svg {
@@ -130,6 +130,11 @@ footer {
     align-self: stretch;
     background-color: #F9F9F9;
     flex-wrap: wrap;
+}
+
+.footer-logo a {
+    display: flex;
+    align-items: center;    
 }
 
 .footer-contacts {
@@ -240,7 +245,7 @@ footer {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    background-color: #ffd6df;
+    background-color: rgba(255, 94, 129, 0.583);
     box-shadow: 0px 0px 24px rgba(92, 0, 47, 0.1);
     color: var(--primdark-color);
     text-align: center;
@@ -253,7 +258,7 @@ footer {
     content: '';
     border-style: solid;
     border-width: var(--arrow-size) var(--arrow-size) 0px var(--arrow-size); /* CSS triangle */
-    border-color: #ffd6df transparent transparent transparent;
+    border-color: rgba(255, 94, 129, 0.583) transparent transparent transparent;
     transition-duration: 0s; /* If the mouse leaves the element, 
                                 the transition effects for the 
                                 tooltip arrow are "turned off" */
@@ -293,6 +298,7 @@ footer {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
+    background-color: #ffffff00;
 }
 
 .footer-round-button svg {
@@ -359,6 +365,21 @@ footer {
     padding: 0% 5% 5%;
     gap: 40px;
  }
+
+ .decorate-element {
+    display: flex;
+    position: absolute;
+    right: 0;
+    align-items: center;
+    z-index: -1;
+    overflow: hidden;
+    width: 60%;
+    margin-bottom: 10%;
+ }
+
+.decorate-svg {
+    min-width: 837px;
+}
 
 .body-text {
     display: flex;
