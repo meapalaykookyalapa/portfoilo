@@ -3,6 +3,7 @@ body {
     padding: 0;
     height: 100vh;
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 :root {
@@ -37,7 +38,7 @@ body {
     --primlight-color: #FFA0B7;
 }
 
-  :root {
+:root {
     --primhover-color: rgba(255, 160, 184, 0.4);
 }
 
@@ -46,12 +47,13 @@ body {
 header {
     display: flex;
     flex-flow: row nowrap;
-    padding: 12px 0px;
+    padding: 12px 0;
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
     height: 60px;
     width: 100%;
+    z-index: 3;
     position: fixed;
     top: 0;
 }
@@ -62,7 +64,7 @@ header {
 
 .logo a {
     display: flex;
-    align-items: center;    
+    align-items: center;
 }
 
 .email {
@@ -73,14 +75,14 @@ header {
     line-height: normal;
     letter-spacing: 0.2px;
     flex-grow: 2;
-    padding: 0% 0% 0% 10%;
+    padding: 0 0 0 10%;
     color: var(--black-color);
 }
 
 .media {
     display: flex;
     flex-flow: row nowrap;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     width: 140px;
     margin-right: 44px;
@@ -134,7 +136,7 @@ footer {
 
 .footer-logo a {
     display: flex;
-    align-items: center;    
+    align-items: center;
 }
 
 .footer-contacts {
@@ -209,7 +211,7 @@ footer {
 }
 
 .footer-email p {
-    margin: 0px;
+    margin: 0;
     cursor: pointer;
 }
 
@@ -217,11 +219,11 @@ footer {
     --arrow-size: 5px;
     position: relative;
     z-index: 10;
-  }
-  
-  /* Positioning and visibility settings of the tooltip */
-  [data-tooltip]:before,
-  [data-tooltip]:after {
+}
+
+/* Positioning and visibility settings of the tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after {
     position: absolute;
     visibility: hidden;
     opacity: 0;
@@ -230,10 +232,10 @@ footer {
     pointer-events: none;
     transition: 0.2s;
     will-change: transform;
-  }
-  
-  /* The actual tooltip with a dynamic width */
-  [data-tooltip]:before {
+}
+
+/* The actual tooltip with a dynamic width */
+[data-tooltip]:before {
     content: attr(data-tooltip);
     padding: 4px 8px;
     min-width: 40px;
@@ -246,46 +248,50 @@ footer {
     font-style: normal;
     font-weight: 500;
     background-color: rgba(255, 94, 129, 0.583);
-    box-shadow: 0px 0px 24px rgba(92, 0, 47, 0.1);
+    box-shadow: 0 0 24px rgba(92, 0, 47, 0.1);
     color: var(--primdark-color);
     text-align: center;
     white-space: pre-wrap;
-    transform: translate(-50%,  calc(0px - var(--arrow-size))) scale(0.5);
-  }
-  
-  /* Tooltip arrow */
-  [data-tooltip]:after {
+    transform: translate(-50%, calc(0px - var(--arrow-size))) scale(0.5);
+}
+
+/* Tooltip arrow */
+[data-tooltip]:after {
     content: '';
     border-style: solid;
-    border-width: var(--arrow-size) var(--arrow-size) 0px var(--arrow-size); /* CSS triangle */
+    border-width: var(--arrow-size) var(--arrow-size) 0 var(--arrow-size); /* CSS triangle */
     border-color: rgba(255, 94, 129, 0.583) transparent transparent transparent;
-    transition-duration: 0s; /* If the mouse leaves the element, 
-                                the transition effects for the 
-                                tooltip arrow are "turned off" */
-    transform-origin: top;   /* Orientation setting for the
-                                slide-down effect */
+    transition-duration: 0s;
+    /* If the mouse leaves the element,
+                                   the transition effects for the
+                                   tooltip arrow are "turned off" */
+    transform-origin: top;
+    /* Orientation setting for the
+                                 slide-down effect */
     transform: translateX(-50%) scaleY(0);
-  }
-  
-  /* Tooltip becomes visible at hover */
-  [data-tooltip]:hover:before,
-  [data-tooltip]:hover:after {
+}
+
+/* Tooltip becomes visible at hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
     visibility: visible;
     opacity: 1;
-  }
-  /* Scales from 0.5 to 1 -> grow effect */
-  [data-tooltip]:hover:before {
+}
+
+/* Scales from 0.5 to 1 -> grow effect */
+[data-tooltip]:hover:before {
     transition-delay: 0.3s;
     transform: translate(-50%, calc(0px - var(--arrow-size))) scale(1);
-  }
-  /* 
-    Arrow slide down effect only on mouseenter (NOT on mouseleave)
-  */
-  [data-tooltip]:hover:after {
+}
+
+/*
+  Arrow slide down effect only on mouseenter (NOT on mouseleave)
+*/
+[data-tooltip]:hover:after {
     transition-delay: 0.5s; /* Starting after the grow effect */
     transition-duration: 0.2s;
     transform: translateX(-50%) scaleY(1);
-  }
+}
 
 .footer-round-button {
     width: 40px;
@@ -298,7 +304,6 @@ footer {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
-    background-color: #ffffff00;
 }
 
 .footer-round-button svg {
@@ -322,7 +327,7 @@ footer {
 .divider {
     width: 100%;
     border-top: 1px solid var(--primdark-color);
-    opacity: 0.2; 
+    opacity: 0.2;
 }
 
 .list-line {
@@ -331,7 +336,7 @@ footer {
     align-items: flex-end;
     width: 100%;
     gap: 12px;
-    align-self: stretch;    
+    align-self: stretch;
 }
 
 .footer-list {
@@ -357,27 +362,30 @@ footer {
     text-decoration: underline;
 }
 
- /* Main content */
+/* Main content */
 
- .main-content {
+.main-content {
     display: flex;
     flex-direction: column;
-    padding: 0% 5% 5%;
+    padding: 0 5% 5%;
     gap: 40px;
- }
+}
 
- .decorate-element {
+.parallax-container {
     display: flex;
     position: absolute;
-    right: 0;
+    justify-content: end;
     align-items: center;
-    z-index: -1;
+    z-index: 1;
     overflow: hidden;
-    width: 60%;
-    margin-bottom: 10%;
- }
+    width: 100%;
+}
 
-.decorate-svg {
+.parallax-layer {
+    z-index: 2;
+}
+
+.parallax-svg {
     min-width: 837px;
 }
 
@@ -407,7 +415,7 @@ footer {
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
-    line-height: 112.1%; 
+    line-height: 112.1%;
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -499,7 +507,7 @@ footer {
     align-content: flex-start;
     gap: 10px;
     align-self: stretch;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .software-list-item {
@@ -510,7 +518,7 @@ footer {
     justify-content: center;
     align-items: center;
     border-radius: 100px;
-    border: 1px solid var(--primlight-color); 
+    border: 1px solid var(--primlight-color);
     color: var(--primdark-color);
     text-align: center;
     font-family: var(--main-font);
