@@ -16,27 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
             emailParagraph.setAttribute("data-tooltip", "Click to copy");
-        }, 2000); // Вернуть текст обратно через 2 секунды
+        }, 2000);
     });
 
     const parallaxContainer = document.querySelector('.parallax-container');
     const layers = document.querySelectorAll('.parallax-layer');
-    const initialPositions = []; // Store initial translation values
-
-    // Get and store initial translation values
-    layers.forEach((layer) => {
-        const computedStyle = getComputedStyle(layer);
-        const transform = new DOMMatrix(computedStyle.transform);
-        initialPositions.push({
-            x: transform.m41,
-            y: transform.m42
-        });
-    });
-
-    // Smooth transition function
-    function smoothTransition(layer, x, y) {
-        layer.style.transform = `translate(${x}px, ${y}px)`;
-    }
 
     parallaxContainer.addEventListener('mousemove', (e) => {
         const x = e.clientX / window.innerWidth - 0.5;
@@ -47,16 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const xOffset = x * speed * 500;
             const yOffset = y * speed * 500;
 
-            smoothTransition(layer, xOffset, yOffset)
-        });
-    });
-
-    parallaxContainer.addEventListener('mouseleave', () => {
-        layers.forEach((layer, index) => {
-            const initialX = initialPositions[index].x;
-            const initialY = initialPositions[index].y;
-
-            smoothTransition(layer, initialX, initialY);
+            layer.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+            layer.style.transitionDuration = `0.15s`;
         });
     });
 
