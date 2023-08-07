@@ -130,7 +130,7 @@ header {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    padding: 0 60px;
+    padding: 0 40px;
     margin: 0;
 }
 
@@ -530,7 +530,7 @@ main {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    justify-content: center;
+    justify-content: space-around;
     padding: 0 60px;
     height: 100vh;
     gap: 10%;
@@ -541,7 +541,6 @@ main {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    height: 100%;
     justify-content: center;
 }
 
@@ -589,13 +588,12 @@ main {
 .zero-text {
     /* position: absolute; */
     display: flex;
-    top: 45%;
+    /* top: 45%; */
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    /* justify-content: center; */
     gap: 8px;
     width: 100%;
-    z-index: 2;
 }
 
 .zero-title {
@@ -606,8 +604,8 @@ main {
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
-    width: 100%;
-    text-align: center;
+    /* width: 100%; */
+    text-align: end;
     font-size: 36px;
 }
 
@@ -615,8 +613,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 100%;
-    padding-right: 20%;
+    /* justify-content: end; */
+    /* width: 100%; */
+    /* padding-right: 20%;*/
 }
 
 .zero-subtitle-item {
@@ -860,14 +859,6 @@ main {
 .zero-block-content {
     flex-direction: column-reverse;
     gap: 40px;
-    height: fit-content;
-}
-.zero-text {
-    padding-left: 15%;
-}
-
-.zero-subtitle {
-    padding-right: 35%;
 }
 
 .body-subtitle {
