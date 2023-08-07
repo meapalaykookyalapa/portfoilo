@@ -47,7 +47,6 @@ body {
 }
 
 
-
 /*Header*/
 
 header {
@@ -77,21 +76,21 @@ header {
 
 .menu-btn span {
     width: 30px;
-	height: 2px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: var(--black-color);
-	transition: all 0.5s;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--black-color);
+    transition: all 0.5s;
 }
 
 .menu-btn span:nth-of-type(2) {
-	top: calc(50% - 5px);
+    top: calc(50% - 5px);
 }
 
 .menu-btn span:nth-of-type(3) {
-	top: calc(50% + 5px);
+    top: calc(50% + 5px);
 }
 
 .menu-btn.active span:nth-of-type(1) {
@@ -100,29 +99,29 @@ header {
 
 .menu-btn.active span:nth-of-type(2) {
     top: 50%;
-    transform: translate(-50%, 0%) rotate(45deg);  
+    transform: translate(-50%, 0%) rotate(45deg);
 }
 
 .menu-btn.active span:nth-of-type(3) {
     top: 50%;
-    transform: translate(-50%, 0%) rotate(-45deg); 
+    transform: translate(-50%, 0%) rotate(-45deg);
 }
 
 .menu {
     z-index: 3;
-	position: fixed;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     padding-top: 120px;
     gap: 48px;
     background: var(--bg-color);
-	transform: translateX(-100%);
-	transition: transform 0.5s; 
+    transform: translateX(-100%);
+    transition: transform 0.5s;
 }
 
 .nav-socials {
@@ -166,11 +165,11 @@ header {
 }
 
 .menu.active {
-	transform: translateX(0);
+    transform: translateX(0);
 }
 
 .menu li {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 .logo {
@@ -234,7 +233,6 @@ header {
 }
 
 
-
 /*Footer*/
 
 footer {
@@ -259,7 +257,6 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     align-self: stretch;
     gap: 40px;
@@ -292,7 +289,6 @@ footer {
     gap: 10px;
     border-radius: 16px;
     background: #FBD5DF;
-    width: fit-content;
 }
 
 .footer-contacts-text, .footer-media {
@@ -472,7 +468,6 @@ footer {
 }
 
 
-
 /* Main content */
 
 main {
@@ -537,10 +532,14 @@ main {
 }
 
 .zero-main-title {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    left: 60px;
+    top: 40%;
+    gap: 44px;
+    max-width: 600px;
     justify-content: center;
 }
 
@@ -549,8 +548,10 @@ main {
     font-family: var(--main-font);
     font-size: 64px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1.92px;
     line-height: 100%;
+    margin: 0;
 }
 
 .prim-btn {
@@ -586,14 +587,14 @@ main {
 }
 
 .zero-text {
-    /* position: absolute; */
+    position: absolute;
     display: flex;
-    /* top: 45%; */
     flex-direction: column;
     align-items: end;
-    /* justify-content: center; */
     gap: 8px;
-    width: 100%;
+    top: 40%;
+    right: 60px;
+    max-width: 600px;
 }
 
 .zero-title {
@@ -604,9 +605,8 @@ main {
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
-    /* width: 100%; */
     text-align: end;
-    font-size: 36px;
+    margin-right: 70px;
 }
 
 .zero-subtitle {
@@ -761,7 +761,7 @@ main {
     gap: 16px;
 }
 
-.main-benefits-title div{
+.main-benefits-title div {
     color: var(--black-color);
     font-family: var(--main-font);
     font-size: 64px;
@@ -844,175 +844,178 @@ main {
 } */
 
 
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 956px) {
 
-.zero-block-content {
-    flex-direction: column-reverse;
-    gap: 40px;
-}
+    .zero-block-content {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
 
-.body-subtitle {
-    width: 20%;
-    padding-left: 20%; 
-}
+    .body-subtitle {
+        width: 20%;
+        padding-left: 20%;
+    }
 
-.about-me-container {
-    flex-wrap: wrap;
-    padding: 3% 0;
-    justify-content: flex-start;
-}
+    .about-me-container {
+        flex-wrap: wrap;
+        padding: 3% 0;
+        justify-content: flex-start;
+    }
 
-.about-me-text {
-    text-align: left;
-}
+    .about-me-text {
+        text-align: left;
+    }
 
 
-.main-benefits-options {
-    flex-wrap: wrap;
-}
+    .main-benefits-options {
+        flex-wrap: wrap;
+    }
 
-/* 
-.software-content {
-    width: 100%;
-} */
+    /*
+    .software-content {
+        width: 100%;
+    } */
+    #parallax-layer1 {
+        right: -10%;
+    }
 
-#parallax-layer1 {
-    right: -10%;
-}
+    .footer-contacts {
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+    }
 
-.footer-contacts {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 24px;
-}
+    .footer-contacts-text {
+        max-width: none;
+        width: 100%;
+        align-items: center;
+    }
 
-.footer-contacts-text {
-    max-width: none;
-    width: 100%;
-    align-items: center;
-}
+    .footer-title {
+        text-align: center;
+    }
 
-.footer-title {
-    text-align: center;
-}
+    .benefits-single-option:hover {
+        background: rgba(255, 255, 255, 0.50);
+    }
 
-.footer-media {
-    width: 100%;
-}
+    .benefits-single-option:hover .option-head {
+        color: var(--black-color);
+    }
 
-.benefits-single-option:hover {
-    background: rgba(255, 255, 255, 0.50);
-}
+    .benefits-single-option:hover .option-text {
+        color: rgba(33, 33, 33, 0.8);
+    }
 
-.benefits-single-option:hover .option-head {
-    color: var(--black-color);
-}
-
-.benefits-single-option:hover .option-text {
-    color: rgba(33, 33, 33, 0.8);
-}
-
-.option-text {
-    justify-content: flex-start;
-}
+    .option-text {
+        justify-content: flex-start;
+    }
 
 }
 
 @media (max-width: 694px) {
 
-main {
-    gap: 120px;
-}
+    footer {
+        padding: 20px 20px;
+    }
 
-.main-content {
-    padding: 0 20px;
-}
+    .main-content {
+        padding: 0 20px;
+    }
 
-.main-benefits {
-    padding: 20px 20px;
-}
+    .main-benefits {
+        padding: 20px 20px;
+    }
 
-.option-head {
-    font-size: 32px;
-}
+    .zero-title {
+        margin: 0;
+    }
 
-.option-text {
-    font-size: 24px;
-}
+    .zero-text {
+        right: 20px;
+        top: 20%;
+    }
 
-.benefits-single-option:hover {
-    background: rgba(255, 255, 255, 0.50);
-}
+    .zero-main-title {
+        left: 20px;
+        bottom: 10%;
+    }
 
-.benefits-single-option:hover .option-head {
-    color: var(--black-color);
-}
+    .zero-main-title h1 {
+        font-weight: 600;
+        letter-spacing: 0;
+    }
 
-.benefits-single-option:hover .option-text {
-    color: rgba(33, 33, 33, 0.8);
-}
+    .option-head {
+        font-size: 32px;
+    }
 
-header .email {
-    display: none;
-}
+    .option-text {
+        font-size: 24px;
+    }
 
-header .media {
-    display: none;
-}
+    .benefits-single-option:hover {
+        background: rgba(255, 255, 255, 0.50);
+    }
 
-.menu-btn {
-    display: block;
-}
+    .benefits-single-option:hover .option-head {
+        color: var(--black-color);
+    }
 
-.logo {
-    margin-left: 20px;  
-}
+    .benefits-single-option:hover .option-text {
+        color: rgba(33, 33, 33, 0.8);
+    }
 
-#parallax-layer1 {
-    right: -20%;
-}
+    header .email {
+        display: none;
+    }
 
-.zero-block-content {
-    padding: 0 20px;  
-}
+    header .media {
+        display: none;
+    }
 
-.zero-main-title h1 {
-    font-size: 48px;
-}
+    .menu-btn {
+        display: block;
+    }
 
-.zero-title {
-    font-size: 28px;
-}
+    .logo {
+        margin-left: 20px;
+    }
 
-.zero-subtitle-item {
-    font-size: 18px;
-}
+    #parallax-layer1 {
+        right: -20%;
+    }
 
-.main-benefits-title div {
-    font-size: 48px;
-}
+    .zero-block-content {
+        padding: 0 20px;
+    }
+
+    .zero-main-title h1 {
+        font-size: 48px;
+    }
+
+    .zero-title {
+        font-size: 28px;
+    }
+
+    .zero-subtitle-item {
+        font-size: 18px;
+    }
+
+    .main-benefits-title div {
+        font-size: 48px;
+    }
 }
 
 
 @media (max-width: 520px) {
-#parallax-layer1 {
-    left: -20%;
-}
+    #parallax-layer1 {
+        left: -20%;
+    }
 
-.body-subtitle {
-    padding-left: 20%;
-}
+    .body-subtitle {
+        padding-left: 20%;
+    }
 }
 
 
