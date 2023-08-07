@@ -28,12 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         layers.forEach((layer, index) => {
             const speed = (index + 1) * 0.1;
-            const xOffset = x * speed * 500;
-            const yOffset = y * speed * 500;
+            const xOffset = x * speed * 800;
+            const yOffset = y * speed * 800;
 
             layer.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
             layer.style.transitionDuration = `0.15s`;
         });
     });
 
+    let menuBtn = document.querySelector('.menu-btn');
+    let menu = document.querySelector('.menu');
+    
+    menuBtn.addEventListener('click', function(){
+        menuBtn.classList.toggle('active');
+        menu.classList.toggle('active');
+    })
 });
