@@ -100,11 +100,17 @@ header {
     font-weight: 500;
     line-height: normal;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .active {
     color: var(--primmedium-color);
     font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
 }
 
 .media {
@@ -245,10 +251,6 @@ header {
     transform: translateX(0);
 }
 
-.menu li {
-    list-style-type: none;
-}
-
 /*Footer*/
 
 footer {
@@ -341,7 +343,7 @@ footer {
 [data-tooltip] {
     --arrow-size: 5px;
     position: relative;
-    z-index: 10;
+    z-index: 2;
 }
 
 /* Positioning and visibility settings of the tooltip */
@@ -444,12 +446,6 @@ footer {
     fill: var(--primdark-color);
 }
 
-.divider {
-    width: 100%;
-    border-top: 1px solid var(--primdark-color);
-    opacity: 0.2;
-}
-
 .list-line {
     display: flex;
     flex-direction: column;
@@ -489,15 +485,11 @@ footer {
 main {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-}
-
-.main-content {
-    padding: 0 60px 60px;
 }
 
 .main-decorated-screen {
     height: 100vh;
+    margin-bottom: 70px;
 }
 
 .parallax-container {
@@ -653,63 +645,150 @@ main {
     text-align: right;
 }
 
-.about-me-container {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%; */
+.main-info-block {
+    position: relative;
     display: flex;
-    padding: 7% 15% 3% 15%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+}
+
+.about-job-circle {
+    position: absolute;
+    right: 430px;
+    top: -70px;
+    display: flex;
+    width: 140px;
+    height: 140px;
     justify-content: center;
     align-items: center;
-    gap: 2px;
+    border-radius: 70px;
+    background: rgba(255, 201, 214, 0.30);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.about-job-circle-text {
+    color: var(--primmedium-color);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     align-self: stretch;
-    flex-wrap: wrap;
+}
+
+.photo-container-huge {
+    display: flex;
+    align-self: stretch;
+    object-fit: cover;
+}
+
+.photo-huge {
+    width: 500px;
+    object-fit: cover;
+    mix-blend-mode: luminosity;
+}
+
+.photo-container-small {
+    display: flex;
+    align-self: stretch;
+    object-fit: cover;
+    display: none;
+}
+
+.photo-small {
+    width: 180px;
+    object-fit: cover;
+    mix-blend-mode: luminosity;
+}
+
+.about-me-path {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.about-me-block {
+    display: flex;
+    padding: 60px 100px 60px 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.about-me-sec-block {
+    gap: 24px;
 }
 
 .about-me-text {
     color: var(--black-color);
     font-family: var(--main-font);
-    font-size: 32px;
+    font-size: 36px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 145%;
-    flex-grow: 2;
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
+    font-weight: 600;
+    line-height: 120%;
+    align-self: stretch;
 }
 
 .about-me-sec-text {
     color: var(--black-color);
-    font-family: var(--sec-font);
+    font-family: var(--main-font);
     font-size: 28px;
-    font-style: italic;
+    font-style: normal;
     font-weight: 500;
-    line-height: 145%;
+    line-height: 130%;
+    opacity: 0.9;
+    align-self: stretch;
+}
+
+.about-job-text {
+    color: var(--primmedium-color);
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.48px;
     text-transform: uppercase;
-    text-align: center;
-    align-items: flex-start;
-    padding: 4px 4px 0px 4px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100px;
-    transition: background-color 0.3s ease;
+    display: none;
 }
 
-.about-me-sec-text:hover {
-    border-radius: 100px;
-    background: var(--main-hover, rgba(255, 160, 183, 0.40));
+.job-link {
+    color: var(--primmedium-color);
+    font-family: var(--sec-font);
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
 }
 
-.about-me-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 40px;
+.job-link:hover {
+    color: var(--primdark-color);
 }
+
+.divider {
+    width: 100%;
+    border-top: 1px solid var(--primdark-color);
+}
+
 
 
 
@@ -722,7 +801,7 @@ main {
 } */
 
 .italic-title {
-    color: var(--black-color);
+    color: var(--primmedium-color);
     font-family: var(--sec-font);
     font-size: 24px;
     font-style: italic;
@@ -767,19 +846,19 @@ main {
 
 .main-benefits {
     display: flex;
+    padding: 60px;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 60px 60px;
-    gap: 80px;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
 }
 
-.main-benefits-title {
+.main-benefits-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
 }
 
-.main-benefits-title div {
+.benefits-title {
     color: var(--black-color);
     font-family: var(--main-font);
     font-size: 64px;
@@ -799,6 +878,18 @@ main {
     align-items: stretch;
     justify-content: space-between;
     gap: 20px;
+    align-self: stretch;
+    flex-wrap: nowrap;
+}
+
+.benefits-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+    align-self: stretch;
+    flex-wrap: nowrap;
 }
 
 .benefits-single-option {
@@ -809,7 +900,9 @@ main {
     border-radius: 8px;
     gap: 12px;
     background: rgba(255, 255, 255, 0.50);
-    width: 400px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: 100%;
     transition: background-color 0.3s ease;
 }
 
@@ -820,10 +913,10 @@ main {
 
 .option-head {
     color: var(--black-color);
-    font-family: var(--sec-font);
-    font-size: 26px;
-    font-style: italic;
-    font-weight: 500;
+    font-family: var(--main-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
     line-height: 120%;
     text-transform: uppercase;
     width: 100%;
@@ -831,7 +924,7 @@ main {
 
 .option-text {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     color: rgba(33, 33, 33, 0.8);
     font-family: var(--main-font);
     font-size: 22px;
@@ -866,9 +959,9 @@ main {
         margin-right: 40px;
     }
 
-    .main-content {
+    /* .main-content {
         padding: 0 40px;
-    }
+    } */
 
     .zero-container {
         right: 20px;
@@ -880,6 +973,38 @@ main {
         bottom: 10%;
     }
     
+    .about-job-circle {
+        right: 330px;
+    }
+
+    .photo-huge {
+        width: 400px;
+    }  
+
+    .about-me-block {
+        padding: 40px;
+    }
+
+    .about-me-text {
+        font-size: 32px;
+    }
+
+    .about-me-sec-block {
+        gap: 20px;
+    }
+
+    .about-me-sec-text {
+        font-size: 24px;
+    }
+
+    .benefits-title {
+        font-size: 56px;
+    }
+
+    .main-benefits {
+        padding: 60px 40px;
+    }
+
     .main-benefits-options {
         flex-wrap: wrap;
     }
@@ -891,18 +1016,6 @@ main {
 
     #parallax-layer1 {
         right: -10%;
-    }
-
-    .benefits-single-option:hover {
-        background: rgba(255, 255, 255, 0.50);
-    }
-
-    .benefits-single-option:hover .option-head {
-        color: var(--black-color);
-    }
-
-    .benefits-single-option:hover .option-text {
-        color: rgba(33, 33, 33, 0.8);
     }
 
     .option-text {
@@ -926,6 +1039,51 @@ main {
     }
 }
 
+
+
+
+
+
+@media (max-width: 800px) {
+    
+    .about-job-circle {
+        right: 280px;
+    }
+
+    .photo-huge {
+        width: 350px;
+    }  
+
+    .about-me-text {
+        font-size: 28px;
+    }
+
+    .about-me-sec-text {
+        font-size: 20px;
+    }
+
+    .benefits-row {
+        flex-wrap: wrap;
+    }
+
+    .benefits-single-option:hover {
+        background: rgba(255, 255, 255, 0.50);
+    }
+
+    .benefits-single-option:hover .option-head {
+        color: var(--black-color);
+    }
+
+    .benefits-single-option:hover .option-text {
+        color: rgba(33, 33, 33, 0.8);
+    }
+}
+
+
+
+
+
+
 @media (max-width: 694px) {
 
     header .logo {
@@ -944,29 +1102,75 @@ main {
         display: none;
     }
 
-    .main-content {
+    .menu-btn {
+        display: block;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    /* .main-content {
         padding: 0 20px;
-    }
+    } */
 
-    .main-benefits {
-        padding: 20px 20px;
-    }
-
-    .zero-title {
-        margin: 0;
+    #parallax-layer1 {
+        right: -20%;
     }
 
     .zero-main-title h1 {
+        font-size: 48px;
         font-weight: 600;
         letter-spacing: 0;
     }
 
-    .option-head {
-        font-size: 32px;
+    .zero-title {
+        font-size: 28px;
+        margin: 0;
     }
 
-    .option-text {
-        font-size: 24px;
+    .zero-subtitle-text {
+        font-size: 22px;
+    }
+
+    .about-job-circle {
+        display: none;
+    }
+
+    .photo-container-huge {
+        display: none;
+    }
+    
+    .photo-container-small {
+        display: flex;
+    }
+
+    .about-me-block {
+        padding: 30px 20px;
+    }
+    
+    .about-me-text {
+        font-size: 36px;
+    }
+
+    .about-me-sec-block {
+        gap: 16px;
+    }
+
+    .about-me-sec-text {
+        font-size: 20px;
+    }
+
+    .about-job-text {
+        display: block;
+    }
+
+    .main-benefits {
+        padding: 60px 20px;
+    }
+
+    .benefits-title {
+        font-size: 44px;
     }
 
     .benefits-single-option:hover {
@@ -981,34 +1185,6 @@ main {
         color: rgba(33, 33, 33, 0.8);
     }
 
-    .menu-btn {
-        display: block;
-    }
-
-    .logo {
-        margin-left: 20px;
-    }
-
-    #parallax-layer1 {
-        right: -20%;
-    }
-
-    .zero-main-title h1 {
-        font-size: 48px;
-    }
-
-    .zero-title {
-        font-size: 28px;
-    }
-
-    .zero-subtitle-text {
-        font-size: 22px;
-    }
-
-    .main-benefits-title div {
-        font-size: 48px;
-    }
-
     footer {
         padding: 20px 20px;
     }
@@ -1016,9 +1192,15 @@ main {
 
 
 @media (max-width: 520px) {
+    
     #parallax-layer1 {
         left: -20%;
     }
+
+    .about-me-text {
+        font-size: 22px;
+    }
+
 }
 
 /***************************************************
