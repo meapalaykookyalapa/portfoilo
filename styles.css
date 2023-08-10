@@ -643,7 +643,6 @@ main {
 .about-me-path {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
     align-self: stretch;
 }
 
@@ -956,7 +955,7 @@ main {
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 820px) {
 
     .about-job-circle {
         right: 280px;
@@ -1041,6 +1040,11 @@ main {
         font-size: 22px;
     }
 
+    .italic-title {
+        font-size: 16px;
+        padding: 0 0 12px 0;
+    }
+
     .about-job-circle {
         display: none;
     }
@@ -1066,7 +1070,7 @@ main {
     }
 
     .about-me-sec-text {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     .about-job-text {
@@ -1106,7 +1110,7 @@ main {
     }
 
     .about-me-text {
-        font-size: 22px;
+        font-size: 28px;
     }
 
 }
