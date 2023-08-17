@@ -308,6 +308,10 @@ footer {
     -webkit-backdrop-filter: blur(4px);
 }
 
+.work-page-footer {
+    background: rgba(0, 0, 0, 0.50);
+}
+
 .footer-title-container {
     display: flex;
     flex-direction: column;
@@ -327,6 +331,10 @@ footer {
     text-transform: uppercase;
 }
 
+.works-page-title {
+    color: var(--white-color);
+}
+
 .footer-contacts-container {
     display: flex;
     flex-direction: column;
@@ -341,6 +349,10 @@ footer {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.work-page-footer-email {
+    color: var(--white-color);
 }
 
 .footer-contacts {
@@ -359,6 +371,10 @@ footer {
     font-weight: 500;
     line-height: normal;
     text-decoration: none;
+}
+
+.work-page-contact-text {
+    color: var(--white-color);
 }
 
 .footer-contact-text:hover {
@@ -1264,33 +1280,8 @@ main {
         grid-template-columns: 1fr;
     }
 
-    .work-single-element:hover {
-        background: rgba(255, 255, 255, 0.40);
-        backdrop-filter: blur(2px);
-    }
-
     .work-photo-container:hover .work-photo {
         transform: none;
-    }
-
-    .work-single-element:hover .work-svg-icon {
-        fill: var(--primmedium-color);
-    }
-
-    .work-single-element:hover .work-title {
-        color: var(--primmedium-color);
-    }
-
-    .work-title:hover {
-        text-decoration: none;
-    }
-
-    .work-single-element:hover .work-single-skill {
-        color: var(--primmedium-color);
-    }
-
-    .round-button:hover {
-        background-color: #ffffff00;
     }
 
     .filter-item:hover {
