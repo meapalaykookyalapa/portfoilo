@@ -19,23 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000);
   });
 
-  // const parallaxContainer = document.querySelector('.parallax-container');
-  // const layers = document.querySelectorAll('.parallax-layer');
-
-  // parallaxContainer.addEventListener('mousemove', (e) => {
-  //     const x = e.clientX / window.innerWidth - 0.5;
-  //     const y = e.clientY / window.innerHeight - 0.5;
-
-  //     layers.forEach((layer, index) => {
-  //         const speed = (index + 1) * 0.1;
-  //         const xOffset = x * speed * 800;
-  //         const yOffset = y * speed * 800;
-
-  //         layer.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-  //         layer.style.transitionDuration = `0.15s`;
-  //     });
-  // });
-
   const parallaxContainer = document.querySelector(".parallax-container");
   const layers = document.querySelectorAll(".parallax-layer");
 
